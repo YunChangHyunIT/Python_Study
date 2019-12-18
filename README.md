@@ -24,3 +24,12 @@
 - 3.x 버전은 완전히 새로 만듬
 
 ### print문
+![print 문](https://user-images.githubusercontent.com/58713853/71067673-501d0680-21b8-11ea-8995-1d2e888c4cb3.PNG)
+
+### 자동 형변환 지원
+- 3.x 버전 부터는 자동 형변환이 되어 int 나누기 결과가 float으로 형변환됨
+![자동형변환](https://user-images.githubusercontent.com/58713853/71067696-54e1ba80-21b8-11ea-99a0-d895f4562a2e.PNG)
+
+### 인코딩
+- 파이썬 3.x 버전부터는 소스 코드의 인코딩이 기본적으로 'UTF-8'
+![인코딩](https://user-images.githubusercontent.com/58713853/71067704-590dd800-21b8-11ea-8e98-8248d6f12620.PNG)
