@@ -32,46 +32,46 @@
   ```
   
   
-  ### 가변 인수
-  - 일반 함수를 호출할 때는 함수 정의문의 형식에 정의된 인수 개수만큼 전달 해야한다.
-  - 가변 인수 함수는 임의 개수의 인수를 받을 수 있다.
-  - 인수 이름 앞에 * 기호를 붙이면 된다.
-  - 가변 인수는 인수 목록의 마지막에 와야 한다.
+### 가변 인수
+- 일반 함수를 호출할 때는 함수 정의문의 형식에 정의된 인수 개수만큼 전달 해야한다.
+- 가변 인수 함수는 임의 개수의 인수를 받을 수 있다.
+- 인수 이름 앞에 * 기호를 붙이면 된다.
+- 가변 인수는 인수 목록의 마지막에 와야 한다.
  
- ```python
- def intsum(s, *ints):
- def intsum(*ints, s):  #TypeError
- def intsum(*ints, *nums):  #SyntaxError
- ```
+```python
+def intsum(s, *ints):
+def intsum(*ints, s):  #TypeError
+def intsum(*ints, *nums):  #SyntaxError
+```
  
- #### 가변 인수를 사용해서 인수를 모두 더하는 예제
- ```python
- def intsum(*ints):
-  sum = 0
-  for num in ints:
-    sum += num
-  return sum
+#### 가변 인수를 사용해서 인수를 모두 더하는 예제
+```python
+def intsum(*ints):
+ sum = 0
+ for num in ints:
+   sum += num
+ return sum
   
 print(intsum(1, 2, 3))
 print(intsum(5, 7, 9, 11, 13))
- ```
+```
  
- ### 인수의 기본값
- - 인수가 많으면 작업을 섬세하게 전달할 수 있다.
- - 잘 변하는 값이 아니면 호출 할 때 항상 전달해야 함으로 불편한다.
- - 잘 변하는 값이 아니면 기본값을 지정하면 호출 할때 생략이 가능하다.
+### 인수의 기본값
+- 인수가 많으면 작업을 섬세하게 전달할 수 있다.
+- 잘 변하는 값이 아니면 호출 할 때 항상 전달해야 함으로 불편한다.
+- 잘 변하는 값이 아니면 기본값을 지정하면 호출 할때 생략이 가능하다.
  
- #### 인수의 기본값 사용한 예제
- ```python
- def calcstep(begin, end, step = 1):
-  sum = 0
-  for num in range(begin, end + 1, step):
-    sum += num
-  return sum
+#### 인수의 기본값 사용한 예제
+```python
+def calcstep(begin, end, step = 1):
+ sum = 0
+ for num in range(begin, end + 1, step):
+   sum += num
+ return sum
   
 print(calcstep(1, 10, 2))
 print(calcstep(1, 100))
- ```
+```
  
  
 ### 키워드 인수
