@@ -98,3 +98,21 @@ for c in key :
 - 사전은 키값만 빼서 집합으로 변경할 수 있다.
 - 파이썬 2.3 버전 이후에 추가 되었다.
 
+#### 집합 활용
+- 집합에 추가, 삭제, 결합을 사용해보자
+```python
+asia = { "korea", "china", "japan" }
+asia.add("vietnam")
+asia.add("china")   # 중복된 값이므로 추가되지 않는다.
+asia.remove("japan")
+print(asia)
+
+asia.update({'singapore', 'hongkong', 'korea'})   # 중복된 값은 제외하고 병합된다.
+print(asia)
+```
+
+### 집합 연산
+- 집합으로 여러가지 연산을 할 수 있다.
+![집합연산](https://user-images.githubusercontent.com/58713853/71399545-4dfaf200-2667-11ea-8ec3-00a72b34e318.PNG)
+- 부분 집합 연산
+![부분집합연산](https://user-images.githubusercontent.com/58713853/71399546-4dfaf200-2667-11ea-9030-d67c0e242973.PNG)
