@@ -116,3 +116,24 @@ print(asia)
 ![집합연산](https://user-images.githubusercontent.com/58713853/71399545-4dfaf200-2667-11ea-8ec3-00a72b34e318.PNG)
 - 부분 집합 연산
 ![부분집합연산](https://user-images.githubusercontent.com/58713853/71399546-4dfaf200-2667-11ea-9030-d67c0e242973.PNG)
+
+#### 집합 연산 예제
+```python
+twox = {2, 4, 6, 8, 10, 12}
+threex = {3, 6, 9, 12, 15}
+
+print("교집합", twox & threex)   # 교집합 {12, 6}
+print("합집합", twox | threex)   # 합집합 {2, 3, 4, 6, 8, 9, 10, 12, 15} 
+print("차집합", twox - threex)   # 차집합 {8, 2, 10, 4} 
+print("차집합", threex - twox)   # 차집합 {9, 3, 15
+print("배타적 차집합", twox ^ threex)   # 배타적 차집합 {2, 3, 4, 8, 9, 10, 15}
+
+# 부분 집합 연산
+mammal = { "코끼리", "고릴라", "사자", "고래", "사람", "원숭이", "개" }
+primate = {"사람", "원숭이", "고릴라"}
+
+print(primate <= mammal)    # True
+print(primate < mammal)     # True
+print(primate <= primate)   # True
+print(primate < primate)    # False
+```
