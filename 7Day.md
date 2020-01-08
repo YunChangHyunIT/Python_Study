@@ -87,6 +87,9 @@ list2 = list1   # 이렇게 대입하게되면 list1의 메모리주소를 list2
 list2[1] = 100  # list1[1] = 100 과 같은 의미이다.
 print(list1)
 print(list2)
+
+# is 연산자를 통해 같은 객체 인지 확인할 수 있다.
+print("list1 == list2 :", list1 is list2)
 ```
 
 #### copy 메서드
@@ -97,18 +100,41 @@ list2 = list1.copy()
 list2[1] = 100 # 위와 다르게 list2[1] 만 값이 바뀐다 ( 독립적인 리스트가 되므로 )
 print(list1)
 print(list2)
-```
 
-#### deepcopy 메서드
-- list 안에 리스트가 있을 때 copy를 하면 어떻게 될까?
+print("list1 == list2 :", list1 is list2)
+```
+- list 안에 list가 있을 때 copy를 하면 어떻게 될까?
 ```python
 list1 = [1, 2, 3]
 list2 = [list1, 4, 5]
 list3 = list2.copy()
 
 list3[0][1] = 99 
+# list2[0]에 list1 의 값들이 온전히 담기는 것이아니고 list1의 메모리 주소가 들어가기 때문에
+# list3[0][1] 을 바꿀시 list2, list1의 값들이 바뀐다.
+list3[1] = 10 # 메모리 주소가 담기지 않는 값들은 list3 에서만 바뀐다.
 
 print(list1) 
+print(list2) 
+print(list3)
+
+print("list1 == list2 :", list1 is list2)
+print("list1 == list3 :", list1 is list3)
+print("list2 == list3 :", list2 is list3) 
+# list1의 주소 값을 갖는 건 맞지만 다른 값들이 독립적으로 복사가 되므로 다른 객체이다.
+```
+#### deepcopy 메서드
+- list의 요소들 중 메모리 주소를 갖는 값이 있으면 그 메모리 주소 안의 값까지 복사해 온다.
+```python
+import copy
+
+list1 = [1, 2, 3]
+list2 = [list1, 4, 5]
+list3 = copy.deepcopy(list2)
+
+list3[0][1] = 99 # copy와 다르게 list3 안에 값만 바뀐다.
+
+print(list1)
 print(list2) 
 print(list3)
 ```
