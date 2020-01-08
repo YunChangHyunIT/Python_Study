@@ -60,3 +60,55 @@ lambda 인수 : 식
 
 
 #### 람다 함수 - filter
+- 함수의 결과가 참인지 거짓인지에 따라, 해당 요소를 포함할지를 결정한다.
+
+```python
+score = [45, 89, 72, 53, 94]
+for s in filter(lambda x: x < 60, score):
+  print(s)
+```
+
+#### 람다 함수 - map
+- 요소들에 함수를 적용해주는 함수이다.
+```python
+score = [45, 89, 72, 53, 94]
+for s in map(lambda x: x /2, score): 
+  print(s)
+```
+
+### 컬렉션의 사본
+- 컬렉션에서는 대입 연산자로 값을 복사 했을 경우 같은 메모리를 가리키고 있다.
+- 독립적인 사본을 만들려면 copy 메서드로 복사본을 생성 해야한다.
+
+```python
+list1 = [1, 2, 3] 
+list2 = list1   # 이렇게 대입하게되면 list1의 메모리주소를 list2가 가지게 된다.
+
+list2[1] = 100  # list1[1] = 100 과 같은 의미이다.
+print(list1)
+print(list2)
+```
+
+#### copy 메서드
+```python
+list1 = [1, 2, 3]
+list2 = list1.copy()
+
+list2[1] = 100 # 위와 다르게 list2[1] 만 값이 바뀐다 ( 독립적인 리스트가 되므로 )
+print(list1)
+print(list2)
+```
+
+#### deepcopy 메서드
+- list 안에 리스트가 있을 때 copy를 하면 어떻게 될까?
+```python
+list1 = [1, 2, 3]
+list2 = [list1, 4, 5]
+list3 = list2.copy()
+
+list3[0][1] = 99 
+
+print(list1) 
+print(list2) 
+print(list3)
+```
