@@ -100,5 +100,24 @@ print("광복절은 " + yoil[day] + "요일이다.")
 
 #### 로또 번호 생성기(1 ~ 45까지의 난수를 6개 만들어보기)
 ```pyton
+import random
 
+lotto = [n for n in range(1,46)]
+random.shuffle(lotto) 
+# random 모듈중 shuffle 이라는 list를 섞어주는 함수를 사용해서 간단하게 만들 수 있다.
+print(lotto[0:6])
+```
+### sys 모듈
+- 파이썬 해석기가 실행되는 환경과 해석기의 여라 가지 기능을 조회하고 관리하는 모듈
+- 시스템에 관련된 정보를 조사한다.
+
+#### sys 모듈 사용
+```python
+import sys
+
+print("버전 :", sys.version)
+print("플랫폼 :", sys.platform) 
+print("바이트 순서 :", sys.byteorder)
+print("모듈 경로 :", sys.path) 
+sys.exit(0)
 ```
