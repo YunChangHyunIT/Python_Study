@@ -1,6 +1,11 @@
 # 8일차 공부
 
-## import
+## 모듈
+- 파이썬 코드를 저장하는 기본 단위
+- 파이썬 스크리브 하나를 의미하되 확장자 .py는 배고 파일명으로 부른다.
+![모듈](https://user-images.githubusercontent.com/58713853/73340966-077c6100-42bf-11ea-866c-cefcbc7ea827.PNG)
+
+### import
 - 자주 사용하는 기능을 표존 모듈로 미리 만들어져 있다.
 - 파이썬 설치 경로에 확장자가 .py 파일이 표준모듈 이다.
 - 대표적으로 수학, 난수, 시간 관련 모듈이 있다.
@@ -120,4 +125,21 @@ print("플랫폼 :", sys.platform)
 print("바이트 순서 :", sys.byteorder)
 print("모듈 경로 :", sys.path) 
 sys.exit(0)
+```
+## 패키지
+- 대규모 프로젝트를 수행하려면 이미 잘 만들어놓은 코드를 활용하는 것이 좋다.
+- 처음부터 모든 코드를 다 작성할 수는 없고 그럴 필요도 없다.
+- 잘 구축된 도구를 적극적으로 활용해야 하며 이런 목적으로 마련된 장치가 모듈이다.
+- 모듈의 수가 많아지면 관리하기가 어렵다.
+- 모듈을 관리하기 위해 패키지라는 개념이 필요하다.
+- 모듈이 파일이라면 패키지는 폴더와 같다.
+![패키지](https://user-images.githubusercontent.com/58713853/73341124-59bd8200-42bf-11ea-9fb8-5a8300f665d6.PNG)
+
+### 패키지 사용하는 예제
+```python
+import calc.add
+calc.add.outadd(1,2)
+
+import report.table
+report.table.printreport()
 ```
